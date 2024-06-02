@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'authenticsans'; /* Choose a suitable name for your custom font */
+  src: url('AUTHENTICSans-Condensed-60.otf') format('opentype'); /* Replace 'your-custom-font.woff2' with the path to your font file */
+  /* You can include additional font formats here if needed */
+}
+
+body, html {
+  margin: 0%;
+  padding: 0%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  /* overflow: hidden; */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background-color: #ecff59; /* Set your desired background color */
+  color: #000000; /* Set your desired text color */
+}
+
+/* #me {
+  width: 20vh;
+  height: auto;
+  margin: 0%;
+  padding: 0%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+} */
+
+/* .home-button {
+position: absolute;
+bottom: 0vh;
+right: 0vw;
+color: rgb(32, 32, 32);
+background-color: rgba(255, 255, 255, 0.4);
+font-size: 2vw ;
+z-index: 6;
+padding: 3% ;
+font-family: 'authenticsans';
+text-decoration: none;
+} */
+
+.text {
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+position: absolute;
+font-family: 'authenticsans';
+text-decoration: none;
+color: #000000;
+font-size: 7vw;
+line-height: 1;
+text-align: center;
+z-index: 11;
+}
+
+@media (min-width: 768px) {
+  .text p {
+      font-size: 5vw; /* Font size for screens 700px or larger */
+  }
+}
+
+.no-underline {
+  text-decoration: none;
+  color: inherit; /* Inherit the color from the parent element */
+}
+
+/* Ensure the visited link color stays the same */
+.no-underline:visited {
+  color: inherit; /* Inherit the color from the parent element */
+}

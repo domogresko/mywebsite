@@ -1,0 +1,286 @@
+@font-face {
+  font-family: 'authenticsans'; /* Choose a suitable name for your custom font */
+  src: url('AUTHENTICSans-Condensed-60.otf') format('opentype'); /* Replace 'your-custom-font.woff2' with the path to your font file */
+  /* You can include additional font formats here if needed */
+}
+
+::selection {
+  background-color: #ecff59; /* Set your desired background color */
+  color: #000000; /* Set your desired text color */
+}
+
+/* footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  background-color: #f51b1b;
+  color: #fff;
+  text-align: justify;
+  text-decoration: none;
+  z-index: 10;
+} */
+
+.soundcloud {
+  margin: 0;
+  position: absolute;
+  right: 2%;
+  font-family: 'authenticsans';
+  color: #000000;
+  text-decoration: none;
+  font-size: 4vw;
+  text-align: right;
+  z-index: 12;
+}
+
+.email {
+  margin: 0;
+  position: absolute;
+  right: 2%;
+  font-family: 'authenticsans';
+  color: #000000;
+  text-decoration: none;
+  font-size: 4vw;
+  text-align: right;
+  z-index: 12;
+}
+
+
+
+@media (max-width: 768px) { /* Adjust the maximum width as per your requirement */
+  .container {
+    flex-direction: column; /* Change flex-direction to stack elements vertically */
+  }
+
+  .left-side, .right-side, .right-side2 {
+    display: none; /* Hide other sections */
+  }
+
+  .alt-side {
+    display: block; /* Display the .alt-side section */
+    width: 100%; /* Make it take up the entire width */
+    overflow-y: scroll; /* Enable scrolling for the .alt-side section */
+  }
+}
+
+@media (min-width: 769px) { /* Reset styles for larger viewports */
+  .container {
+    flex-direction: row; /* Reset flex-direction to display elements side by side */
+  }
+
+  .left-side, .right-side, .right-side2 {
+    display: block; /* Reset display for other sections */
+  }
+
+  .alt-side {
+    display: none; /* Hide the .alt-side section */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body, html {
+  margin: 0%;
+  padding: 0%;
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.precontainer {
+  position: fixed; /* Change position to fixed */
+  top: 0;
+  height: 5vh;
+  width: 100vw;
+  background-color: #ffffff;
+  color: #fff;
+  text-align: justify;
+  /* text-align: justify; */
+  text-decoration: none;
+  z-index: 10;
+
+  /* position: absolute;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  margin: 0%; */
+  /* padding: 0%; */
+  /* padding-top: calc(100vh - var(--header-height)); */
+}
+
+.domo {
+  /* margin: 0; */
+  /* left: 10vw; */
+  left: 0.5vw;
+  /* top: 0.5vh; */
+  position: fixed;
+  font-family: 'authenticsans';
+  text-decoration: none;
+  color: #000000;
+  font-size: 5vh;
+  text-align: justify;
+  z-index: 11;
+}
+
+.about-domo {
+  position: fixed;
+  /* top: 0.5vh; */
+  left: 67.5%;
+  font-family: 'authenticsans';
+  color: #000000;
+  text-decoration: none;
+  font-size: 5vh;
+  text-align: right;
+  z-index: 12;
+}
+
+/* .about-button3 {
+  font-family: 'authenticsans';
+  color: #000000;
+  text-decoration: none;
+  font-size: 4vh;
+  text-align: right;
+  z-index: 11;
+} */
+
+.container {
+  position: relative;
+  display: flex;
+  top: 5vh;
+  height: 100%;
+  overflow: hidden; /* Hide container scrollbar */
+  margin: 0%;
+  /* padding: 0%; */
+  /* padding-top: calc(100vh - var(--header-height)); */
+}
+
+.left-side, .right-side, .right-side2 {
+  flex: 2;
+  /* overflow-y: auto; */
+  /* height: 100%; */
+  overflow-y: scroll;
+  margin: 0%;
+  padding: 0%;
+}
+
+.left-side {
+  background-color: #ffffff;
+  width: 33%;
+  /* padding: 0; */
+}
+
+.right-side {
+  background-color: rgb(255, 255, 255);
+  width: 33%;
+  /* margin: 0; */
+}
+
+.right-side2 {
+  background-color: #ffffff;
+  width: 32%;
+  /* margin: 0; */
+}
+
+img {
+  width: 96%;
+  height: auto;
+  margin: 2%;
+  padding: 0%;
+  transition: filter 0.5s; /* Add transition effect */
+  position: relative;
+  z-index: 1; /* Ensure image has a lower z-index than text overlay */
+}
+
+/* img:hover {
+  filter: blur(8px);
+} */
+
+/* img::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 4, 4);
+  font-size: 2vw;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 5;
+
+} */
+
+/* Show text overlay on hover */
+img:hover::after {
+  opacity: 1 ; /* Make the text visible on hover */
+}
+
+.image-container {
+  position: relative;
+}
+
+/* .image-description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgb(0, 0, 0);
+  
+  font-size: 2vw ;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+  pointer-events: none;
+  padding: 5%;
+  
+  font-family: 'authenticsans';
+} */
+
+.image-container:hover .image-description {
+  opacity: 1;
+}
+
+/* .about-button2 {
+  width: 7vw;
+  height: 6vh;
+  background-color: #007bff;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 7vw;
+  position: absolute;
+  bottom: 3vh;
+  right: 3vw;
+  z-index: 6;
+  font-family: 'authenticsans';
+  font-size: 2vw;
+} */
+
+/* .about-button {
+position: absolute;
+  bottom: 0vh;
+  right: 0vw;
+  
+  color: rgb(32, 32, 32);
+  background-color: rgba(255, 255, 255, 0.4);
+  
+  font-size: 2vw ;
+  z-index: 6;
+  padding: 3% ;
+  text-align: center;
+  font-family: 'authenticsans';
+  text-decoration: none;
+} */

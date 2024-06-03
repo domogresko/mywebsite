@@ -1,1 +1,5 @@
-permalink: /:categories/:title/
+title: Domo Gresko
+description: Domo Gresko works
+baseurl: ""
+url: "https://domogresko.com"
+permalink: /:title/

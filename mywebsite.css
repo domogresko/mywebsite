@@ -46,7 +46,7 @@
 
 
 
-@media (max-width: 768px) { /* Adjust the maximum width as per your requirement */
+@media (max-width: 700px) { /* Adjust the maximum width as per your requirement */
   .container {
     flex-direction: column; /* Change flex-direction to stack elements vertically */
   }
@@ -62,7 +62,7 @@
   }
 }
 
-@media (min-width: 769px) { /* Reset styles for larger viewports */
+@media (min-width: 701px) { /* Reset styles for larger viewports */
   .container {
     flex-direction: row; /* Reset flex-direction to display elements side by side */
   }

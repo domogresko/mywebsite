@@ -2,6 +2,28 @@
   font-family: 'authenticsans'; /* Choose a suitable name for your custom font */
   src: url('AUTHENTICSans-Condensed-60.otf') format('opentype'); /* Replace 'your-custom-font.woff2' with the path to your font file */
   /* You can include additional font formats here if needed */
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'authenticsans'; /* Choose a suitable name for your custom font */
+  src: url('AUTHENTICSans-Condensed-90.otf') format('opentype'); /* Replace 'your-custom-font.woff2' with the path to your font file */
+  /* You can include additional font formats here if needed */
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'authenticsans'; /* Choose a suitable name for your custom font */
+  src: url('AUTHENTICSans-Condensed-130.otf') format('opentype'); /* Replace 'your-custom-font.woff2' with the path to your font file */
+  /* You can include additional font formats here if needed */
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'authenticsans'; /* Choose a suitable name for your custom font */
+  src: url('AUTHENTICSans-Condensed-150.otf') format('opentype'); /* Replace 'your-custom-font.woff2' with the path to your font file */
+  /* You can include additional font formats here if needed */
+  font-weight: 700;
 }
 
 ::selection {
@@ -20,7 +42,7 @@
   z-index: 10;
 } */
 
-.soundcloud {
+/* .soundcloud {
   margin: 0;
   position: absolute;
   right: 2%;
@@ -30,9 +52,9 @@
   font-size: 4vw;
   text-align: right;
   z-index: 12;
-}
+} */
 
-.email {
+/* .email {
   margin: 0;
   position: absolute;
   right: 2%;
@@ -42,7 +64,7 @@
   font-size: 4vw;
   text-align: right;
   z-index: 12;
-}
+} */
 
 
 
@@ -98,44 +120,134 @@ body, html {
   display: none;
 }
 
-.precontainer {
-  position: fixed; /* Change position to fixed */
+/* .precontainer {
+  position: fixed;
   top: 0;
   height: 5vh;
   width: 100vw;
   background-color: #ffffff;
   color: #fff;
   text-align: justify;
-  /* text-align: justify; */
   text-decoration: none;
   z-index: 10;
-
-  /* position: absolute;
-  display: flex;
-  height: 100%;
-  overflow: hidden;
-  margin: 0%; */
-  /* padding: 0%; */
-  /* padding-top: calc(100vh - var(--header-height)); */
-}
+} */
 
 .domo {
   /* margin: 0; */
-  /* left: 10vw; */
-  left: 1.5vmin;
-  /* top: 0.5vh; */
+  top: 1vh;
+  left: 50%;
+  transform: translateX(-50%);
   position: fixed;
   font-family: 'authenticsans';
+  font-weight: 700;
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   font-size: 5vh;
-  text-align: justify;
+  /* text-align: justify; */
   z-index: 11;
+  cursor: pointer;
+  mix-blend-mode: difference;
 }
 
-.about-domo {
+/* .domo:hover {
+  text-decoration: underline;
+} */
+
+/* overlay (starts invisible and non-interactive) */
+.about-modal {
   position: fixed;
-  /* top: 0.5vh; */
+  inset: 0;                          /* top:0; right:0; bottom:0; left:0 */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;           /* align to top so card slides from top */
+  padding-top: 6vh;                  /* space from the top */
+  z-index: 999;
+  
+  /* hidden state */
+  opacity: 0;
+  pointer-events: none;              /* clicks pass through when hidden */
+  transition: opacity 300ms ease;
+  background: rgba(255,255,255,0.6); /* optional soft overlay; adjust alpha */
+  -webkit-backdrop-filter: blur(2px); /* nice touch if supported */
+  backdrop-filter: blur(2px);
+}
+
+/* visible state */
+.about-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* card: start slightly above and transparent, transition into place */
+.about-content {
+  /* background: #fff; */
+  padding: 1.8rem;
+  border-radius: 10px;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.15); */
+  max-width: 520px;
+  width: min(92%, 520px);
+  transform: translateY(-40px);
+  opacity: 0;
+  transition:
+    transform 360ms cubic-bezier(.22,.9,.28,1),
+    opacity 300ms ease;
+  position: relative; /* allows absolute close button */
+  font-family: 'authenticsans', system-ui, sans-serif;
+  color: #111;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2.5;
+  letter-spacing: 0.06em;
+}
+
+/* when modal has .open, animate card into final state */
+.about-modal.open .about-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* .close-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  background: transparent;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: #222;
+  line-height: 1;
+} */
+
+@media (max-width:700px) {
+  .about-content { padding: 1.2rem; width: 94%; transform: translateY(-30px); }
+  .domo { font-size: 6.5vw; top: 1.2vh; }
+}
+
+.custom-underline {
+  color: inherit;            /* keep the parent text color */
+  text-decoration: underline; /* underline only */
+  text-decoration-color: currentColor; /* optional: make sure underline matches text color */
+  text-decoration-thickness: 1px;      /* optional: control underline thickness */
+  text-underline-offset: 2px;          /* optional: move underline slightly away from text */
+}
+
+/* .about-info {
+  display: none;
+  font-family: 'authenticsans';
+  margin: 1.5rem auto;
+  max-width: 600px;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.about-info.show {
+  display: block;
+} */
+
+/* .about-domo {
+  position: fixed;
   left: 67.5%;
   font-family: 'authenticsans';
   color: #000000;
@@ -143,7 +255,7 @@ body, html {
   font-size: 5vh;
   text-align: right;
   z-index: 12;
-}
+} */
 
 /* .about-button3 {
   font-family: 'authenticsans';
@@ -157,7 +269,7 @@ body, html {
 .container {
   position: relative;
   display: flex;
-  top: 5vh;
+  /* top: 5vh; */
   height: 100%;
   overflow: hidden; /* Hide container scrollbar */
   margin: 0%;
@@ -284,3 +396,6 @@ position: absolute;
   font-family: 'authenticsans';
   text-decoration: none;
 } */
+
+
+
